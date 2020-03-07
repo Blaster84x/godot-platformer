@@ -16,7 +16,7 @@ export var air_jump_unlocked := true
 onready var spawn_point := self.get_global_position()
 
 func _ready():
-	get_node("../TileMap").connect("player_dead", self, "death")
+	get_node("../TileMap").connect("player_death", self, "death")
 	spawn_point = self.get_global_position()
 
 func _physics_process(delta):
@@ -57,6 +57,7 @@ func _physics_process(delta):
 		
 func death():
 	self.set_global_position(spawn_point)
+	get_node("AudioStreamPlayer2D").play()
 
 func flip():
 	facing_right = !facing_right

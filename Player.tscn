@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://platformer_char_stand.png" type="Texture" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://platformer_char_walk1.png" type="Texture" id=4]
 [ext_resource path="res://platformer_char_walk2.png" type="Texture" id=5]
 [ext_resource path="res://platformer_char_walk3.png" type="Texture" id=6]
+[ext_resource path="res://audio/hurt.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.70457, 21.2632 )
+extents = Vector2( 11.6815, 48.1061 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 8.97014
+radius = 10.5894
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -35,10 +36,11 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.70377, -0.117367 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0.541103, 12.1083 )
+position = Vector2( -0.953659, 37.6851 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -48,3 +50,7 @@ zoom = Vector2( 1.1, 1.1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+pitch_scale = 1.58

@@ -19,7 +19,7 @@ script = ExtResource( 2 )
 deadly_tile_names = [ "magma", "spikes" ]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 782.811, 471.908 )
+position = Vector2( 782.811, 458.342 )
 
 [node name="AngryGuy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1107.47, 605.217 )
