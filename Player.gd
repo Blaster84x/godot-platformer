@@ -6,17 +6,20 @@ const GRAVITY = 50
 const MAX_FALL_SPEED = 1000
 const DEATH_LOW_LIMIT = -1120
 
-onready var anim_player = $AnimatedSprite
-onready var sprite = anim_player
-
 var y_velo := 0
 var facing_right := false
 var has_air_jump := false
+
 export var air_jump_unlocked := true
+export var max_hp := 50
+
 onready var spawn_point := self.get_global_position()
+onready var anim_player = $AnimatedSprite
+onready var sprite = anim_player
+onready var hitpoints := max_hp
 
 func _ready():
-	get_node("../TileMap").connect("player_dead", self, "death")
+	get_node("../TileMap").connect("player_death", self, "death")
 	spawn_point = self.get_global_position()
 
 func _physics_process(delta):
@@ -57,6 +60,8 @@ func _physics_process(delta):
 		
 func death():
 	self.set_global_position(spawn_point)
+	hitpoints = max_hp
+	get_node("AudioStreamPlayer2D").play()
 
 func flip():
 	facing_right = !facing_right

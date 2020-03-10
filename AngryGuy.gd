@@ -15,5 +15,5 @@ func _physics_process(delta):
 	if area.overlaps_body(player):
 		add_force(Vector2(MOVE_SPEED, 0), Vector2(0, -1))
 	if area2.overlaps_body(player):
-		add_force(Vector2(-1 *MOVE_SPEED, 0), Vector2(0, -1))
+		add_force(Vector2(-1 * MOVE_SPEED, 0), Vector2(0, -1))
 	pass

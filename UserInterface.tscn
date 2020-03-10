@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Control" type="CanvasLayer"]
+layer = 2
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 302.0
+margin_bottom = 63.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
